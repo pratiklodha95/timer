@@ -1,0 +1,242 @@
+<html>
+	<head>
+		<title>MI Timer</title>
+		<style>
+			@font-face {
+			    font-family: 'Monospace Typewriter';
+			    src: url('Fonts/MonospaceTypewriter.ttf');
+			}
+			@font-face {
+			    font-family: 'Pacifico';
+			    src: url('Fonts/Pacifico.ttf');
+			}
+			@font-face {
+			    font-family: 'Homestead';
+			    src: url('Fonts/Homestead-Regular_0.ttf');
+			}
+			body{
+				background: url('back.jpg')no-repeat center center fixed; 
+					-webkit-background-size: cover;
+					-moz-background-size: cover;
+					-o-background-size: cover;
+					background-size: cover;
+				width: 90%;
+				left: 5%;
+			   	height: 100%;
+			   	top: 35%;
+			   	position: fixed;
+			   	text-align: center;
+			   	display:inline-block;
+			}
+			audio{
+				display: none;
+			}
+			.timer{
+				font-family: "Monospace Typewriter";
+				font-size: 100px;
+				position: relative;
+				margin:4px;
+				height: 135px;
+				width: 80px;
+				background-color: rgba(255,255,255,0.6);
+				border-radius: 20px;
+				color:#09162B;
+				display: inline-block;
+			}
+			.timergroup{
+				width:20%;
+				display: inline-block;
+			}
+			.msg{
+				font-family: "Pacifico";
+			    font-size: 50px;
+			    color: rgba(255,255,255,0.6);
+			    display: block;
+			    position: relative;
+			    top:40px;
+			}
+			.time{
+				font-family: "Homestead";
+				font-size: 40px;
+				display: inline-block;
+				color: white;
+				width: 100%;
+			}
+
+
+			@media only screen and (min-width : 300px) and (max-width : 480px), screen and (min-device-width : 300px) and (max-device-width : 480px) {
+				body{
+					width: 100%;
+					left:0%;
+					top:27%;
+				}
+				.timergroup{
+					width:50%;
+					display: inline-block;
+				}
+				.timer{
+					font-size: 60px;
+					margin:2px;
+					height: 83px;
+					width: 55px;
+					border-radius: 12px;
+				}
+				.time{
+					font-size: 20px;
+				}
+				.msg{
+				    font-size: 30px;
+				    top:0px;`
+				}
+			}
+
+
+			@media only screen and (min-width : 481px) and (max-width : 767px), screen and (min-device-width : 481px) and (max-device-width : 767px) {
+				body{
+					width: 100%;
+					left:0%;
+					top: 30%;
+				}
+				.timergroup{
+					width:33%;
+					display: inline-block;
+				}
+				.timer{
+					font-size: 70px;
+					margin:3px;
+					height: 100px;
+					width: 60px;
+					border-radius: 14px;
+				}
+				.time{
+					font-size: 25px;
+				}
+				.msg{
+				    font-size: 35px;
+				    top:15px;
+				}
+			}
+
+
+			@media only screen and (min-width : 768px) and (max-width : 1024px), screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+				body{
+					width: 100%;
+					left:0%;
+				}
+				.timer{
+					font-size: 80px;
+					margin:3px;
+					height: 110px;
+					width: 65px;
+					border-radius: 16px;
+				}
+				.time{
+					font-size: 30px;
+				}
+				.msg{
+				    font-size: 40px;
+				}
+			}
+
+
+			@media only screen and (min-width : 1024px) and (max-width : 1240px), screen and (min-device-width : 1024px) and (max-device-width : 1240px) {
+				.timer{
+					font-size: 90px;
+					margin:4px;
+					height: 120px;
+					width: 70px;
+					border-radius: 18px;
+				}
+				.time{
+					font-size: 35px;
+				}
+				.msg{
+				    font-size: 45px;
+				}
+			}
+	    </style>
+		<script type="text/javascript" >
+			window.onload = function(){
+				var target_date = new Date("Dec 18, 2015").getTime();
+				var current_date = new Date().getTime();
+				var centiseconds_left = (target_date - current_date + 36000000)/10;
+				CreateTimer("timer", centiseconds_left);
+			}
+
+			var Timer;
+			var TotalcSeconds;
+
+
+			function CreateTimer(TimerID, Time) {
+				Timer = document.getElementById(TimerID);
+				Timer1 = document.getElementById('Timer1');
+				Timer2 = document.getElementById('Timer2');
+				Timer3 = document.getElementById('Timer3');
+				Timer4 = document.getElementById('Timer4');
+				Timer5 = document.getElementById('Timer5');
+				TotalcSeconds = Time;
+
+				UpdateTimer()
+				window.setTimeout("Tick()", 1);
+			}
+
+			function Tick() {
+				if (TotalcSeconds <= 0) {
+					alert("Time's up!")
+					return;
+				}
+
+				TotalcSeconds -= 1;
+				UpdateTimer()
+				window.setTimeout("Tick()", 10);
+			}
+			 
+
+			function UpdateTimer() {
+				var target_date = new Date("Dec 18, 2015").getTime();
+				var current_date = new Date().getTime();
+				var centiseconds_left = (target_date - current_date + 36000000)/10;
+
+				var cSeconds = TotalcSeconds;
+
+				var cSeconds=centiseconds_left;
+				var Days = Math.floor(cSeconds / 8640000);
+				cSeconds -= Days * 8640000;
+				var Hours = Math.floor(cSeconds / 360000);
+				cSeconds -= Hours * (360000);
+				var Minutes = Math.floor(cSeconds / 6000);
+				cSeconds -= Minutes * (6000);
+				var Seconds = Math.floor(cSeconds / 100);
+				cSeconds -= Seconds * (100);
+
+				var TimeStr = "<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Days)/10)+"</div>"+
+					"<div class='timer'>"+LeadingZero(Days)%10+"</div>"+"<div class='time'>DAYS</div></div>"+
+				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Hours)/10)+"</div>"+
+				"<div class='timer'>"+LeadingZero(Hours)%10+"</div>"+"<div class='time'>HOURS</div></div>"+
+				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Minutes)/10)+"</div>"+
+				"<div class='timer'>"+LeadingZero(Minutes)%10+"</div>"+"<div class='time'>MIN</div></div>"+
+				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Seconds)/10)+"</div>"+
+				"<div class='timer'>"+LeadingZero(Seconds)%10+"</div>"+"<div class='time'>SEC</div></div>"+
+				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Math.floor(cSeconds))/10)+"</div>"+
+				"<div class='timer'>"+LeadingZero(Math.floor(cSeconds))%10+"</div>"+"<div class='time'>M.SEC</div></div>";
+				Timer.innerHTML = TimeStr;
+			}
+
+			function LeadingZero(Time) {
+				return (Time < 10) ? "0" + Time : + Time;
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id=moodi>
+			<div id='timer'>
+			</div>
+			<div class="msg">Countdown to the best 4 days of your life</div>
+			<audio autoplay loop>
+				<source src="mood.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>
+		</div>
+	</body>
+</html>
