@@ -16,7 +16,7 @@ body{
 #sun_yellow{
     position:absolute;
     left:0%;
-    top:80%;
+    top:70%;
     width:150px;
     height:152px;
     background:transparent url(../images/sun.png) no-repeat bottom left;
@@ -46,7 +46,7 @@ body{
     width:100%;
     height:100%;
     background:transparent url(../images/ground.png) repeat-x bottom left;
-    background-size: 30%;
+    background-size: 100%;
     z-index:4;
 }
 #night{
@@ -81,6 +81,6 @@ body{
     height:168px;
     background:transparent url(../images/moon.png) no-repeat center center;
     z-index:3;
-    opacity:0;
+    opacity:1;
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
