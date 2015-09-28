@@ -52,15 +52,15 @@ window.onload = function(){
 				cSeconds -= Seconds * (100);
 
 				var TimeStr = "<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Days)/10)+"</div>"+
-					"<div class='timer'>"+LeadingZero(Days)%10+"</div>"+"<div class='time'>DAYS</div></div>"+
+					"<div class='timer'>"+LeadingZero(Days)%10+"</div>"+"<div class='time'>Days</div></div>"+
 				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Hours)/10)+"</div>"+
-				"<div class='timer'>"+LeadingZero(Hours)%10+"</div>"+"<div class='time'>HOURS</div></div>"+
+				"<div class='timer'>"+LeadingZero(Hours)%10+"</div>"+"<div class='time'>Hours</div></div>"+
 				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Minutes)/10)+"</div>"+
-				"<div class='timer'>"+LeadingZero(Minutes)%10+"</div>"+"<div class='time'>MIN</div></div>"+
+				"<div class='timer'>"+LeadingZero(Minutes)%10+"</div>"+"<div class='time'>Min</div></div>"+
 				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Seconds)/10)+"</div>"+
-				"<div class='timer'>"+LeadingZero(Seconds)%10+"</div>"+"<div class='time'>SEC</div></div>"+
+				"<div class='timer'>"+LeadingZero(Seconds)%10+"</div>"+"<div class='time'>Sec</div></div>"+
 				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Math.floor(cSeconds))/10)+"</div>"+
-				"<div class='timer'>"+LeadingZero(Math.floor(cSeconds))%10+"</div>"+"<div class='time'>M.SEC</div></div>";
+				"<div class='timer'>"+LeadingZero(Math.floor(cSeconds))%10+"</div>"+"<div class='time'>M.Sec</div></div>";
 				Timer.innerHTML = TimeStr;
 			}
 

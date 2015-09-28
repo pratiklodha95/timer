@@ -15,6 +15,7 @@
         <div id="sun_red"></div>
         <div id="clouds"></div>
         <div id="ground"><div class="msg">Countdown to the best 4 days of your life</div></div>
+        <div id="muteb"><a onclick="muteAudio()" href="#" id="mute"><img id="micon" src="images/vol.png"></a></div>
         <div id="night"></div>
         <div id="stars"></div>        
         <div id="sstar"></div>
@@ -22,6 +23,18 @@
         <script type="text/javascript" src="jquery-1.3.2.js"></script>
         <script type="text/javascript" src="jquery.color.js"></script>
         <script type="text/javascript">
+
+        function muteAudio(){
+        var audio = document.getElementById('background_audio');
+        var image = document.getElementById('micon');
+            if (image.src.match("volm")) {
+                image.src = "images/vol.png";
+                document.getElementById('background_audio').muted = false;
+            } else {
+                image.src = "images/volm.png";
+                document.getElementById('background_audio').muted = true;
+            }
+        }
 
             function daynight(){
                     $(function() {
@@ -55,12 +68,15 @@
                 });
             });}
 	       daynight();
+
+
         </script>
 
         <div id="moodi">
+           <div id="logounit"> <img id="logo" src="images/logounit.png"></div>
 			<div id="timer">
 			</div>
-			<audio autoplay loop>
+			<audio id="background_audio" autoplay="autoplay" loop>
 				<source src="mood.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
 			</audio>
