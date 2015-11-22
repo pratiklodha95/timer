@@ -58,10 +58,20 @@ window.onload = function(){
 				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Minutes)/10)+"</div>"+
 				"<div class='timer'>"+LeadingZero(Minutes)%10+"</div>"+"<div class='time'>Min</div></div>"+
 				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Seconds)/10)+"</div>"+
-				"<div class='timer'>"+LeadingZero(Seconds)%10+"</div>"+"<div class='time'>Sec</div></div>"+
-				"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Math.floor(cSeconds))/10)+"</div>"+
+				"<div class='timer'>"+LeadingZero(Seconds)%10+"</div>"+"<div class='time'>Sec</div></div>";
+				
+				var sTimeStr=TimeStr+"<div class='timergroup'>"+"<div class='timer'>"+Math.floor(LeadingZero(Math.floor(cSeconds))/10)+"</div>"+
 				"<div class='timer'>"+LeadingZero(Math.floor(cSeconds))%10+"</div>"+"<div class='time'>M.Sec</div></div>";
-				Timer.innerHTML = TimeStr;
+				
+				if(window.innerWidth>747)
+				{
+					Timer.innerHTML = sTimeStr;	
+				}
+				else
+				{
+					Timer.innerHTML =TimeStr;
+				}
+				
 			}
 
 			function LeadingZero(Time) {
