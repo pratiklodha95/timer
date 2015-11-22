@@ -5,7 +5,14 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
-	</head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Mood Indigo 2014-15 - IIT Bombay : Asia's largest cultural festival held in December mumbai concert.">   
+        <meta name="keyword" content="cultural, asia,largest,concert ,festival,livewire, 180 events, competitions">
+        <meta name="author" content="pratik lodha,lodhapratik9@gmail.com"> 
+        <meta name="robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
 
 	<body>
 		<script type="text/javascript" src="scripts.js"></script>
@@ -76,7 +83,11 @@
                     $('#night').animate({'opacity':0},15000);
                 });
             });}
-	      daynight();
+            if(window.innerWidth>748)
+            {
+                daynight();                
+            }
+
         </script>
 
         <div id="moodi">
