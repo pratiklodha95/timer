@@ -9,17 +9,8 @@
 
 	<body>
 		<script type="text/javascript" src="scripts.js"></script>
-		<div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=333400450156052";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-		<div class="fb-like" data-href="http://moodi.org" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-		<span class="ig-follow" data-id="b8d75b7cd1" data-handle="iitbombay.moodi" data-count="true" data-size="large" data-username="true"></span>
-        <div id="sky"></div>
+		
+		<div id="sky"></div>
         <div id="sun_yellow"></div>
         <div id="sun_red"></div>
         <div id="clouds"></div>
@@ -72,7 +63,7 @@
                     $('#sky').animate({'backgroundColor':'#fff'}, 20000);
                 });
                 $('#clouds').animate({'backgroundPosition': cloudx+'px 0px','opacity':0}, 10000);
-                $('#night').animate({'opacity':0.8}, 22000,function(){
+                $('#night').animate({'opacity':0.8}, 23000,function(){
                     $('#night').animate({'opacity':0},15000);
                 });
             });}
@@ -83,13 +74,12 @@
            <div id="logounit"> <img id="logo" src="images/logounit1.png" style="-webkit-filter: drop-shadow(5px 5px 5px #222); filter: drop-shadow(5px 5px 5px #222);"></div>
 			<div id="timer">
 			</div>
-		
-        
+<span class="ig-follow" data-id="b8d75b7cd1" data-handle="iitbombay.moodi" data-count="true" data-size="large" data-username="true"></span>
 			<audio id="background_audio" autoplay="autoplay" loop>
 				<source src="mood.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
 			</audio>
 		</div>
-<script>(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//x.instagramfollowbutton.com/follow.js";s.parentNode.insertBefore(g,s);}(document,"script"));</script>
+<script>(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="http://x.instagramfollowbutton.com/follow.js";s.parentNode.insertBefore(g,s);}(document,"script"));</script>
 	</body>
 </html>

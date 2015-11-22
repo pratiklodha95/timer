@@ -24,6 +24,16 @@
 			   	text-align: center;
 			   	display:inline-block;
 			}
+			.fb-like{
+				position: fixed;
+				top: 20px;
+				left: 40px;
+				z-index:200;
+			}
+			.ig-follow{
+				position: fixed!important;top: 40px;right: 40px;
+				z-index: 200;
+			}
 			#moodi{
 				position: absolute;
 				width:100%;
@@ -86,7 +96,7 @@
 			}
 
 
-			@media only screen and (min-width : 300px) and (max-width : 480px), screen and (min-device-width : 300px) and (max-device-width : 480px) {
+			@media only screen and (max-width : 480px), screen and (min-device-width : 300px) and (max-device-width : 480px) {
 				body{
 					width: 100%;
 					left:0%;

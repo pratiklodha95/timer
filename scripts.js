@@ -30,7 +30,7 @@ window.onload = function(){
 
 				TotalcSeconds -= 1;
 				UpdateTimer()
-				window.setTimeout("Tick()", 10);
+				window.setTimeout("Tick()", 300);
 			}
 			 
 
