@@ -36,7 +36,6 @@
 			}
 			#moodi{
 				position: absolute;
-				width:100%;
 				top: 4%;
 				z-index: 10;
 			}
@@ -102,6 +101,10 @@
 					left:0%;
 					top:27%;
 				}
+				#logounit{
+					padding-top: 50px;
+				}
+
 				.timergroup{
 					width:50%;
 					display: inline-block;
@@ -123,11 +126,26 @@
 			}
 
 
-			@media only screen and (min-width : 481px) and (max-width : 767px), screen and (min-device-width : 481px) and (max-device-width : 767px) {
+			@media only screen and (max-width : 767px), screen and (max-device-width : 767px) {
 				body{
 					width: 100%;
 					left:0%;
 					top: 30%;
+				}
+				#sun_yellow{
+					display:none;
+				}
+				#moon{
+					display: none;
+				}
+				#logounit{
+					padding-top: 50px;
+				}
+				.fb-like{
+					display:none!important;
+				}
+				.ig-follow{
+					display:none!important;
 				}
 				.timergroup{
 					width:33%;
@@ -144,8 +162,8 @@
 					font-size: 25px;
 				}
 				.msg{
-				    font-size: 35px;
-				    bottom: 0%;
+				    font-size: 20px!important;
+				    bottom: 2%;
 				}
 			}
 
@@ -155,6 +173,10 @@
 					width: 100%;
 					left:0%;
 				}
+				#logounit{
+					padding-top: 50px;
+				}
+
 				.timer{
 					font-size: 80px;
 					margin:3px;
